@@ -1,0 +1,587 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9f9f9;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #0f172a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  z-index: 1000;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.logo {
+  font-size: 50px;
+  color: rgb(18, 76, 222);
+  font-weight: bold;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: 0.7; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.05); }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  background: #1e3a8a;
+  border-radius: 5px;
+}
+
+.signup-btn {
+  background: #38bdf8;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 15px;
+}
+
+.signup-btn:hover {
+  background: #0ea5e9;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background: white;
+  display: none;
+  list-style: none;
+  padding: 10px 0;
+  border-radius: 5px;
+  min-width: 120px;
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 8px 15px;
+}
+
+.dropdown-menu li a {
+  color: black;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 70vh;
+  background: url('images/home.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.hero-text {
+  position: relative;
+  max-width: 600px;
+  z-index: 2;
+  padding-left: 30px;
+}
+
+.hero-text h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.sway {
+  display: inline-block;
+  animation: swayAnim 4s ease-in-out infinite alternate;
+}
+
+@keyframes swayAnim {
+  0% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  100% { transform: rotate(-2deg); }
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 30px;
+  overflow: hidden;
+  white-space: pre-wrap; /* allows text to wrap */
+  border-right: 2px solid white;
+}
+/* ABOUT US SECTION */
+.about-us {
+  padding: 80px 50px;               /* space around the section */
+  background-color: #f4f4f4;        /* light gray background */
+  text-align: center;               /* center all text in the section */
+}
+
+.about-us h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;                  /* prominent size for the heading */
+  font-weight: 700;
+  color: #1e90ff;                   /* deep blue color */
+  margin-bottom: 50px;              /* space below the heading */
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;        /* optional for bold effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .about-us {
+    padding: 60px 20px;
+  }
+
+  .about-us h2 {
+    font-size: 28px;                 /* slightly smaller on mobile */
+    margin-bottom: 40px;
+  }
+}
+/* ABOUT US CARDS - HORIZONTAL LAYOUT */
+.about-cards {
+  display: flex;               /* flex row layout */
+  justify-content: center;     /* center horizontally */
+  align-items: stretch;        /* equal height for cards */
+  gap: 60px;                   /* spacing between cards */
+  flex-wrap: wrap;             /* wrap to next line on small screens */
+  padding: 0 20px;
+}
+
+/* Individual card sizing */
+.card {
+  flex: 1 1 300px;             /* grow/shrink with screen, min 300px */
+  max-width: 350px;            /* don't exceed 350px */
+  background-color: #020325;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+/* IMAGE */
+.card-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  
+}
+
+/* HEADING AND TEXT */
+.card-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 10px 0;
+  color: #1e90ff;
+  transition: color 0.4s ease;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  padding: 0 10px;
+  line-height: 1.5;
+  transition: color 0.4s ease;
+}
+
+/* BUTTON */
+.card .dropbtn {
+  background: #1f3e5e;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.card:hover {
+  background-color: #0b3968;
+}
+
+.card:hover .card-heading,
+.card:hover p {
+  color: #ffffff;
+}
+
+.card:hover .dropbtn {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.card:hover .card-image img {
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-cards {
+    flex-direction: column;     /* stack vertically */
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    max-width: 90%;             /* fill most of screen on mobile */
+  }
+}
+/* ============================= */
+/* VMC SECTION */
+/* ============================= */
+/* VISION, MISSION & CORE VALUES SECTION */
+.vmc {
+  padding: 80px 50px;             /* space around the section */
+  background-color: #f9f9f9;      /* light background */
+  text-align: center;             /* center all text in the section */
+}
+
+.vmc h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;                /* large, prominent title */
+  font-weight: 700;
+  color: #1e90ff;                 /* deep blue color */
+  margin-bottom: 60px;            /* space between title and cards */
+  line-height: 1.2;
+  letter-spacing: 1px;
+  text-transform: uppercase;      /* optional, makes it more "heroic" */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+  .vmc {
+    padding: 60px 20px;
+  }
+
+  .vmc h2 {
+    font-size: 28px;               /* slightly smaller on mobile */
+    margin-bottom: 40px;
+  }
+}
+.vmc-cards {
+  display: flex;
+  justify-content: space-between; /* distribute evenly */
+  align-items: stretch;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px; /* control overall width */
+  margin: 0 auto; /* center on screen */
+}
+
+/* Individual Cards */
+.vmc-card {
+  flex: 1; /* allow cards to grow evenly */
+  min-width: 280px; /* good mobile minimum */
+  max-width: 350px; /* prevents oversized cards */
+  padding: 35px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.4s ease;
+  animation: zoomSoft 4s ease-in-out infinite;
+}
+
+/* Card Colors */
+.vmc-card:nth-child(1) {
+  background: #00457C;
+  color: #fff;
+}
+
+.vmc-card:nth-child(2) {
+  background: #1E90FF;
+  color: #fff;
+}
+
+.vmc-card:nth-child(3) {
+  background: #38BDF8;
+  color: #fff;
+}
+
+/* Icon */
+.vmc-card i {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Title */
+.vmc-card h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* Text */
+.vmc-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Softer Zoom Animation */
+@keyframes zoomSoft {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.04); } /* subtle zoom */
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .vmc-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vmc-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+/* ================================= */
+/* FOUNDER + CONTACT SECTION */
+/* ================================= */
+
+.founder-contact {
+  padding: 100px 60px;
+  background: #f4f4f4;
+}
+
+/* Main layout row */
+.founder-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+/* ================================= */
+/* FOUNDER SIDE */
+/* ================================= */
+
+/* Flip Card */
+.flip-card {
+  width: 280px;
+  aspect-ratio: 1 / 1;
+  perspective: 1000px;
+  flex-shrink: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: flip 6s infinite linear;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Image styling */
+.flip-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Flip animation */
+@keyframes flip {
+  0%   { transform: rotateY(0deg); }
+  50%  { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Founder Info */
+.founder-info {
+  max-width: 300px;
+  margin-top: 20px;
+}
+
+.founder-info h3 {
+  font-size: 26px;
+  color: #1e90ff;
+  margin-bottom: 15px;
+}
+
+.founder-info p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+/* ================================= */
+/* CONTACT SIDE */
+/* ================================= */
+
+.contact-container {
+  display: flex;
+  gap: 60px;
+  flex: 1;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Contact Info */
+.contact-info {
+  max-width: 320px;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  color: #1e90ff;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 400px;
+  width: 100%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #1e90ff;
+  box-shadow: 0 0 8px rgba(30,144,255,0.2);
+}
+
+.contact-form button {
+  padding: 12px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #1e90ff;
+}
+
+/* ================================= */
+/* RESPONSIVE */
+/* ================================= */
+
+@media (max-width: 900px) {
+  .founder-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .founder-info,
+  .contact-info {
+    text-align: center;
+  }
+}
