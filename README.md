@@ -121,7 +121,7 @@ As a civil engineering student exploring tech, this project bridges traditional 
 ## 📸 Preview
 
 You can view the live version here:
-👉 *(Insert GitHub Pages link here if deployed)*
+👉 https://structural-hub.vercel.app/
 
 ---
 
